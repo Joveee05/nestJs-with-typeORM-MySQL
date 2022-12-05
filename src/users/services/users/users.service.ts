@@ -23,9 +23,13 @@ export class UsersService {
   getUserById(id: number) {
     return this.users.find((user) => user.id === id);
   }
-  @Post('create')
+
   createUser(createUserDto: CreateUserDto) {
     const newUser = this.userRepository.create(createUserDto);
     return this.userRepository.save(newUser);
+  }
+
+  findUserByUsername(username: string) {
+    return this.userRepository.findOneBy({ username });
   }
 }
