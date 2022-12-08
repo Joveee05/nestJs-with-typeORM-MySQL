@@ -1,6 +1,10 @@
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 
-export async function encodePassword(rawPassword: string) {
-  const SALT = await bcrypt.genSalt();
-  return bcrypt.hash(rawPassword, SALT);
+export function encodePassword(rawPassword: string) {
+  const SALT = bcrypt.genSaltSync();
+  return bcrypt.hashSync(rawPassword, SALT);
+}
+
+export function comparePasswords(rawPassword: string, hashedPassword: string) {
+  return bcrypt.compare(rawPassword, hashedPassword);
 }
