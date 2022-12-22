@@ -4,6 +4,7 @@ import { CustomersModule } from './customers/customers.module';
 import { User } from './typeorm/user';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { SessionEntity } from './typeorm';
 @Module({
   imports: [
     CustomersModule,
@@ -15,7 +16,7 @@ import { AuthModule } from './auth/auth.module';
       username: 'root',
       password: 'Ejovi@1997',
       database: 'nestjs_typeorm',
-      entities: [User],
+      entities: [User, SessionEntity],
       synchronize: true,
     }),
     AuthModule,

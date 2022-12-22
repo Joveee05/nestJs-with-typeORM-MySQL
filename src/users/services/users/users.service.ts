@@ -32,7 +32,7 @@ export class UsersService {
   }
 
   findUserByUsername(username: string) {
-    return this.userRepository.findOneBy({ username });
+    return this.userRepository.findOne({ username });
   }
 
   findUserById(id: number) {
