@@ -11,10 +11,10 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
-import { CreateUserDto } from 'src/customers/dtos/createUser.dto';
-import { UserNotFoundException } from 'src/users/exceptions/usernotfound.exceptions';
-import { UsersService } from 'src/users/services/users/users.service';
-import { serializedUser } from 'src/users/types';
+import { CreateUserDto } from '../../../customers/dtos/createUser.dto';
+import { UserNotFoundException } from '../../exceptions/usernotfound.exceptions';
+import { UsersService } from '../../../users/services/users/users.service';
+import { serializedUser } from '../../types';
 
 @Controller('users')
 export class UsersController {

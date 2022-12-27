@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PassportModule } from '@nestjs/passport';
-import { User } from 'src/typeorm/user';
-import { UsersService } from 'src/users/services/users/users.service';
+import { User } from '../typeorm/user';
+import { UsersService } from '../users/services/users/users.service';
 import { AuthController } from './controllers/auth-controller/auth.controller';
 import { AuthService } from './services/auth-services/auth.service';
 import { LocalStorage } from './utils/localstrategy';

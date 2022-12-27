@@ -4,7 +4,7 @@ import {
   NestModule,
   RequestMethod,
 } from '@nestjs/common';
-import { ValidateCustomerMiddleware } from 'src/customers/middlewares/customer.middleware';
+import { ValidateCustomerMiddleware } from './middlewares/customer.middleware';
 import { CustomersController } from './controllers/customers/customers.controller';
 import { CustomersService } from './services/customers/customers.service';
 

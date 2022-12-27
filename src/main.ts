@@ -4,7 +4,7 @@ import * as session from 'express-session';
 import * as passport from 'passport';
 import { TypeormStore } from 'connect-typeorm';
 import { getRepository } from 'typeorm';
-import { SessionEntity } from './typeorm/session';
+import { SessionEntity } from './typeorm';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -20,7 +20,9 @@ async function bootstrap() {
         maxAge: 600000,
         httpOnly: true,
       },
-      store: new TypeormStore().connect(sessionRepository),
+      store: new TypeormStore({
+        cleanupLimit: 10,
+      }).connect(sessionRepository),
     }),
   );
   app.use(passport.initialize());
